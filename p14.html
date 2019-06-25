@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script>src="./p14.js" type="application/javascript"</script>
+</head>
+<body>
+<ul id=#listaDesordenada>
+	<li>
+		<h3>El señor de los anillos</h3>
+		<p>Accion</p>
+		<img src="./accion.jpg" alt="accion" width="40px" height="40px">
+	</li>
+</ul>
+<script type="application/javascript">
+	for(int i=0; i<pelis.length; i++) {
+		var ulObjetivo = document.querySelector("#listaDesordenada");
+		var pHijo = createElement("li");
+			for(var key in pelis[i]) {
+				var value = arr[key];
+					if(key == "Nombre") {
+						var pNieto1 = createElement("h3");
+						pNieto1.textContent = value;
+						pHijo.appendChild(pNieto1);
+					}
+					if(key == "Genero") {
+						var pNieto2 = createElement("p");
+						pNieto2.textContent = value;
+						pHijo.appendChild(pNieto2);
+							
+							if(value == "Acción") {
+								var pNieto3 = createElement("img");
+								pNieto3.src = "./accion.jpg";
+								pNieto3.style.width = "40px";
+								pNieto3.style.height = "40px";
+								pHijo.appendChild(pNieto3);
+							} else if (value == "Comedia") {
+								var pNieto3 = createElement("img");
+								pNieto3.src = "./comedia.jpg";
+								pNieto3.style.width = "40px";
+								pNieto3.style.height = "40px";
+								pHijo.appendChild(pNieto3);
+							} else {	
+								var pNieto3 = createElement("img");
+								pNieto3.src = "./animacion.jpg";
+								pNieto3.style.width = "40px";
+								pNieto3.style.height = "40px";
+								pHijo.appendChild(pNieto3);
+							}	
+					}	
+			ulObjetivo.appendChild(pHijo);
+		}
+	}	
+</script>
+</body>
+</html>
